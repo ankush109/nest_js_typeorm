@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Listing } from 'src/items/entities/Listing.entity';
 import { Comment } from 'src/items/entities/comment.enitity';
 import { Item } from 'src/items/entities/item.entity';
+import { Tag } from 'src/items/entities/tag.entity';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { Item } from 'src/items/entities/item.entity';
         username: 'root',
         password: 'ankush',
         synchronize: true,
-        entities: [Item, Listing, Comment],
+        entities: [Item, Listing, Comment, Tag],
+        logging: true,
       }),
       inject: [ConfigService],
     }),
